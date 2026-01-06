@@ -1,0 +1,122 @@
+body {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: radial-gradient(#7c7c7c, #313131);
+}
+
+.container-main {
+    height: 500px;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.image {
+    width: 82px;
+    height: 82px;
+    background: url('images/senha.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+h1 {
+    color: #fff;
+    font-weight: bold;
+    padding: 0;
+    margin: 0;
+}
+
+.container-input {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    text-align: left;
+    padding: 15px;
+    width: 100%;
+    background: linear-gradient(0.25turn, #313131, #6e6e6e, #7c7c7c);
+}
+
+.container-input input {
+    background-color: transparent;
+    border: none;
+    padding: 8px 10px;
+    border-radius: 8px;
+    outline: none;
+    width: 95%;
+    color: #fff;
+}
+
+.container-input i {
+    color: #b4e14c;
+    cursor: pointer;
+    transition: 0.5s ease-in-out;
+}
+
+.container-input i:hover {
+    color: #8db03d;
+}
+
+.container-opts {
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 1rem;
+    color: #fff;
+    width: 100%;
+    background: linear-gradient(0.25turn, #313131, #6e6e6e, #7c7c7c);
+}
+
+.btns {
+    display: flex;
+    gap: 8px;
+}
+
+.btns p {
+    padding: 0;
+    margin: 0;
+}
+
+input[type="number"] {
+    border-radius: 3px;
+    width: 70px;
+    height: 20px;
+    outline: none;
+    background-color: #fff;
+}
+
+input[type="checkbox"] {
+    accent-color: #5cd9ff;
+}
+
+.btn-generate {
+    width: 100%;
+    border: none;
+    padding: 14px 10px;
+    border-radius: 6px;
+    background-color: #b4e14c;
+    color: #000;
+    font-weight: bold;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.5s ease-in-out;
+}
+
+.btn-generate:hover:active {
+    color: #fff;
+}
+
+@media (min-width: 400px) {
+    .container-main {
+        width: 320px;
+    }
+}
