@@ -8,11 +8,11 @@ const cMin = document.querySelector("#min");
 const cNum = document.querySelector("#num");
 const cEsp = document.querySelector("#esp");
 
-nCon.value = 0;
+nCon.value = 1;
 
 const alf = [
-    'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s',
-    't','u','w','x','y','z'
+    'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's',
+    't', 'u', 'w', 'x', 'y', 'z'
 ];
 
 const esp = [
@@ -34,9 +34,9 @@ const schema = (string) => {
     let isNum = false;
     let isEsp = false;
     cMai.checked = false;
-    cMin.checked = false; 
+    cMin.checked = false;
     cNum.checked = false;
-    cEsp.checked = false; 
+    cEsp.checked = false;
 
     for (let i = 0; i < string.length; i++) {
         if (string[i] === ' ') {
@@ -85,9 +85,6 @@ const schema = (string) => {
 }
 
 const valid = (e) => {
-    let con = e.length;
-    nCon.value = con;
-
     try {
         schema(e);
     } catch (error) {
@@ -96,18 +93,22 @@ const valid = (e) => {
 }
 
 const generate = () => {
-   if (cMai.checked) {
+    cPas.value = '';
+    let gPas = '';
+    const random = [];
 
-   }
-   if (cMin.checked) {
+    for (let i = 0; i < Number(nCon.value); i++) {
+        if (cMai.checked) { random.push(alf[Math.floor(Math.random() * alf.length)]) }
+        if (cMin.checked) { random.push(alf[Math.floor(Math.random() * alf.length)].toUpperCase()) }
+        if (cNum.checked) { random.push(alf[Math.floor(Math.random() * 9)]) }
+        if (cEsp.checked) { random.push(alf[Math.floor(Math.random() * esp.length)]) }
 
-   }
-   if (cNum.checked) {
+        if (!Number(nCon.value) === i) {
+            gPas = gPas + random[i];
+        }
+    }
 
-   }
-   if (cEsp.checked) {
-
-   } 
+    cPas.value = gPas;
 }
 
 cPas.addEventListener('input', (e) => { valid(e.target.value) });

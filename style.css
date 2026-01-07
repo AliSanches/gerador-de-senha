@@ -88,7 +88,7 @@ h1 {
 
 input[type="number"] {
     border-radius: 3px;
-    width: 70px;
+    width: 50px;
     height: 20px;
     outline: none;
     background-color: #fff;
@@ -112,11 +112,11 @@ input[type="checkbox"] {
     transition: 0.5s ease-in-out;
 }
 
-.btn-generate:hover  {
+.btn-generate:hover {
     color: #fff;
 }
 
-.btn-generate:active  {
+.btn-generate:active {
     color: #fff;
 }
 
