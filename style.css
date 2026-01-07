@@ -92,6 +92,7 @@ input[type="number"] {
     height: 20px;
     outline: none;
     background-color: #fff;
+    border: none;
 }
 
 input[type="checkbox"] {
@@ -111,7 +112,11 @@ input[type="checkbox"] {
     transition: 0.5s ease-in-out;
 }
 
-.btn-generate:hover:active {
+.btn-generate:hover  {
+    color: #fff;
+}
+
+.btn-generate:active  {
     color: #fff;
 }
 
