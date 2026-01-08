@@ -92,23 +92,49 @@ const valid = (e) => {
     }
 }
 
+const revert = (a) => {
+    let res = '';
+    for (let i = a.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [a[i], a[j]] = [a[j], a[i]];
+    }
+
+    for (let x = 0; x < a.length; x++) {
+        res += a[x];
+    }
+
+    return res;
+}
+
 const generate = () => {
     cPas.value = '';
     let gPas = '';
-    const random = [];
 
-    for (let i = 0; i < Number(nCon.value); i++) {
-        if (cMai.checked) { random.push(alf[Math.floor(Math.random() * alf.length)]) }
-        if (cMin.checked) { random.push(alf[Math.floor(Math.random() * alf.length)].toUpperCase()) }
-        if (cNum.checked) { random.push(alf[Math.floor(Math.random() * 9)]) }
-        if (cEsp.checked) { random.push(alf[Math.floor(Math.random() * esp.length)]) }
+    for (let i = 0; i < nCon.value; i++) {
+        if (cMin.checked) {
+            gPas += alf[Math.floor(Math.random() * alf.length)];
+            if (gPas.length === Number(nCon.value)) { break }
+        }
 
-        if (!Number(nCon.value) === i) {
-            gPas = gPas + random[i];
+        if (cMai.checked) {
+            gPas += alf[Math.floor(Math.random() * alf.length)].toUpperCase();
+            if (gPas.length === Number(nCon.value)) { break }
+        }
+
+        if (cNum.checked) {
+            gPas += Math.floor(Math.random() * 10);
+            if (gPas.length === Number(nCon.value)) { break }
+        }
+
+        if (cEsp.checked) {
+            gPas += esp[Math.floor(Math.random() * esp.length)];
+            if (gPas.length === Number(nCon.value)) { break }
         }
     }
 
-    cPas.value = gPas;
+    let res = revert(gPas);
+
+    cPas.value = res;
 }
 
 cPas.addEventListener('input', (e) => { valid(e.target.value) });
